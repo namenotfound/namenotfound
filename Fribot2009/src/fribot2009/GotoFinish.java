@@ -16,6 +16,19 @@ public class GotoFinish extends BehaviorParent {
 	@Override
 	public void action() {
 		super.action();
+		
+		pilot.setTravelSpeed(Constants.speedFast);
+		navi.goTo(0, 0, 90);
+		if(waitForStop())
+		{
+			return;
+		}
+		navi.goTo(0, 0, 90);
+		if(waitForStop())
+		{
+			return;
+		}
+		executed=true;
 	}
 
 	

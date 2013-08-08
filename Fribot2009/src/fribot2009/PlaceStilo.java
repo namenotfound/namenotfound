@@ -5,7 +5,6 @@ import lejos.nxt.TouchSensor;
 import lejos.nxt.UltrasonicSensor;
 import lejos.robotics.navigation.DifferentialPilot;
 import lejos.robotics.navigation.Navigator;
-import lejos.util.Delay;
 
 public class PlaceStilo extends BehaviorParent {
 

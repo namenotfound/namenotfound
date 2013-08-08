@@ -26,7 +26,7 @@ public class Fribot2009 {
 	
 	private void initPilot()
 	{
-		pilot=new DifferentialPilot(DifferentialPilot.WHEEL_SIZE_NXT2, Con, leftMotor, rightMotor)
+	//	pilot=new DifferentialPilot(DifferentialPilot.WHEEL_SIZE_NXT2, Con, leftMotor, rightMotor)
 	}
 	private void initNavi()
 	{

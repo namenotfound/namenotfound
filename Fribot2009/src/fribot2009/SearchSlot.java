@@ -50,24 +50,51 @@ public class SearchSlot extends BehaviorParent {
 	{
 		us.continuous();
 		int range;
+		int firstTravel=0;
+		int secondrot=0;
+		boolean isLast=true;
 		for(int i=0;i<3;i++)
 		{
 			range=(int)us.getRange();
 			if(range>30)
 			{
+				isLast=false;
+				if(i==0)
+				{
+				firstTravel=40;
+				secondrot=-45;
+				}
 				break;
 			}
-			travel(25, true);
+			travel(i==2?18:25, true);
 			if(waitForStop())
 			{
 				return true;
 			}
+		}
+		if(isLast)
+		{
+			firstTravel=40;
+			secondrot=15;
 		}
 		rotate(90, true);
 		if(waitForStop())
 		{
 			return true;
 		}	
+		if(firstTravel>0)
+		{
+			travel(firstTravel,true);
+			if(waitForStop())
+			{
+				return true;
+			}	
+			rotate(secondrot, true);
+			if(waitForStop())
+			{
+				return true;
+			}	
+		}
 		return false;
 	}
 	

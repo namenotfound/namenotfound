@@ -7,6 +7,7 @@ import lejos.nxt.UltrasonicSensor;
 import lejos.robotics.Color;
 import lejos.robotics.navigation.DifferentialPilot;
 import lejos.robotics.navigation.Navigator;
+import lejos.util.Delay;
 
 public class PlaceStilo extends BehaviorParent {
 
@@ -19,7 +20,7 @@ public class PlaceStilo extends BehaviorParent {
 	@Override
 	public void action() {
 		super.action();
-		pilot.setTravelSpeed(Constants.speedSlow);
+		pilot.setTravelSpeed(Constants.speedMedium);
 		travel(200,true);
 		while(cs.getColor().getColor()!=Color.BLACK)
 		{
@@ -50,23 +51,25 @@ public class PlaceStilo extends BehaviorParent {
 			{
 				navi.stop();
 				navi.clearPath();
-				int count=0;
 				int max=3;
 				while(cs.getColor().getColor()!=Color.BLACK)
 				{
-					pilot.setTravelSpeed(Constants.speedInsane);
-					rotate(rotfactor* 5, true);
-					count++;
-					if(waitForStop())
+					pilot.setTravelSpeed(Constants.speedTouch);
+					rotate(rotfactor* 5*max, true);
+					while(navi.isMoving()&&cs.getColor().getColor()!=Color.BLACK)
 					{
-						return;
+						if(suppressed)
+						{
+							navi.stop();
+							navi.clearPath();
+							return;
+						}
+						Delay.usDelay(500);
 					}
-					if(count>=max)
-					{
-						count=0;
+					navi.stop();
+					navi.clearPath();
 						max+=9;
 						rotfactor*=-1;
-					}
 				}
 				pilot.setTravelSpeed(Constants.speedSlow);
 				travel(100,true);
@@ -90,7 +93,7 @@ public class PlaceStilo extends BehaviorParent {
 		{
 			return;
 		}
-		Constants.motorCentral.rotate(-Constants.motorCentralRotVal-55,true);
+		Constants.motorCentral.rotate(-Constants.motorCentralRotVal-105,true);
 		if(waitForMotorStop(Constants.motorCentral))
 		{
 			return;

@@ -25,7 +25,7 @@ public class PushObject extends BehaviorParent {
 		travel(68, true);
 		while(!objectFound && navi.isMoving()){
 			range = us.getDistance();
-			if(range <= 10){
+			if(range <= 30){
 				objectFound = true;
 			}
 			Delay.msDelay(200);

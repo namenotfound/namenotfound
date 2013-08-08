@@ -24,11 +24,12 @@ public class PushObject extends BehaviorParent {
 		pilot.setTravelSpeed(Constants.speedSlow);
 		travel(68, true);
 		while(!objectFound && navi.isMoving()){
+			Delay.msDelay(200);
 			range = us.getDistance();
 			if(range <= 30){
 				objectFound = true;
 			}
-			Delay.msDelay(200);
+			
 		}
 		
 		// if there's an object
@@ -36,15 +37,34 @@ public class PushObject extends BehaviorParent {
 			navi.stop();
 			navi.clearPath();
 			
+			travel(-5,true);
+			if (waitForStop()){
+				navi.stop();
+				navi.clearPath();
+				return;
+			}
 			rotate(90, true);
 			if (waitForStop()){
+				navi.stop();
+				navi.clearPath();
 				return;
 			}
-			travel(range, true);
-			if (waitForStop()){
-				return;
+			pilot.setTravelSpeed(Constants.speedSlow);
+			travel(range+10, true);
+			while(!ts1.isPressed()||!ts2.isPressed())
+			{
+				if(suppressed)
+				{
+					navi.stop();
+					navi.clearPath();
+					return;
+				}
+				Thread.yield();
 			}
-			rotate(-90, true);
+			navi.stop();
+			navi.clearPath();
+			pilot.setTravelSpeed(Constants.speedMedium);
+			travel(-range, true);
 			if (waitForStop()){
 				return;
 			}
@@ -52,9 +72,13 @@ public class PushObject extends BehaviorParent {
 		
 		// goTo behavior end position
 		pilot.setTravelSpeed(Constants.speedFast);
-		float currentY = navi.getPoseProvider().getPose().getY();
-		navi.goTo(210, currentY);
-		
+		navi.goTo(210, 65,0);
+		if(waitForStop())
+		{
+			navi.stop();
+			navi.clearPath();
+			return;
+		}
 		executed = true;
 	}
 

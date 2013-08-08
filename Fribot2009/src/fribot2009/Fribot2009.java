@@ -29,7 +29,7 @@ public class Fribot2009 {
 		initNavi();
 		initSensors();
 		Behavior[] bev={new GotoFinish(pilot, navi, us, cs, ts1, ts2),new PlaceStilo(pilot, navi, us, cs, ts1, ts2),new PushObject(pilot, navi, us, cs, ts1, ts2),new SearchSlot(pilot, navi, us, cs, ts1, ts2)
-	//   ,new Calibrate(pilot, navi, us, cs, ts1, ts2)
+	 //  ,new Calibrate(pilot, navi, us, cs, ts1, ts2)
 		,new Abort(pilot, navi, us, cs, ts1, ts2)
 		};
 		arbi=new Arbitrator(bev);
@@ -39,11 +39,12 @@ public class Fribot2009 {
 	private void initPilot()
 	{
 		pilot=new DifferentialPilot(DifferentialPilot.WHEEL_SIZE_NXT2+Constants.wheelDiameterOffset, Constants.trackWidth, Constants.motorLeft, Constants.motorRight);
+	pilot.setAcceleration(40);
 	}
 	private void initNavi()
 	{
 		navi=new Navigator(pilot);
-		navi.getPoseProvider().setPose(new Pose(0, 0, 0));
+		navi.getPoseProvider().setPose(new Pose(34.5f, 27, 0));
 	}
 	private void initSensors()
 	{

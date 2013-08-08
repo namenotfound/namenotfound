@@ -23,12 +23,14 @@ public class GotoFinish extends BehaviorParent {
 		{
 			return;
 		}
-		navi.goTo(280, 170, 90);
+		navi.goTo(280, 190, 90);
 		if(waitForStop())
 		{
 			return;
 		}
+		System.exit(0);
 		executed=true;
+		
 	}
 
 	@Override

@@ -17,8 +17,13 @@ public class SearchSlot extends BehaviorParent {
 	@Override
 	public void action() {
 		super.action();
-		pilot.setTravelSpeed(Constants.speedFast);
-		navi.goTo(60,87.5f, -90);
+		pilot.setTravelSpeed(Constants.speedMedium);
+		navi.goTo(60,87.5f, 0);
+		if(waitForStop())
+		{
+			return;
+		}
+		rotate(-90, true);
 		if(waitForStop())
 		{
 			return;
@@ -32,7 +37,7 @@ public class SearchSlot extends BehaviorParent {
 		{
 			return;
 		}
-		navi.goTo(110, 80,0);
+		navi.goTo(125, 85,0);
 		if(waitForStop())
 		{
 			return;

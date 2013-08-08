@@ -24,8 +24,8 @@ public class Calibrate extends BehaviorParent {
 		super.action();
 		
 	//	calTravelDistance();
-	//	calRotation();
-		calCentralMotor();
+		calRotation();
+	//	calCentralMotor();
 		System.exit(0);
 	}
 	
@@ -36,7 +36,7 @@ public class Calibrate extends BehaviorParent {
 	
 	private void calRotation()
 	{
-		rotate(180,false);
+		rotate(90,false);
 		
 		
 	}

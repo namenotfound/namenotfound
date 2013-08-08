@@ -26,14 +26,42 @@ public class SearchSlot extends BehaviorParent {
 		{
 			return;
 		}
-		
+		travel(50,true);
+		if(waitForStop())
+		{
+			return;
+		}
+		navi.goTo(0, 0,0);
+		if(waitForStop())
+		{
+			return;
+		}	
+		executed=true;
 	}
 
 	
 	private boolean search()
 	{
-		
-		
+		us.continuous();
+		int range;
+		for(int i=0;i<3;i++)
+		{
+			range=(int)us.getRange();
+			if(range>30)
+			{
+				break;
+			}
+			travel(25, true);
+			if(waitForStop())
+			{
+				return true;
+			}
+		}
+		rotate(90, true);
+		if(waitForStop())
+		{
+			return true;
+		}	
 		return false;
 	}
 	

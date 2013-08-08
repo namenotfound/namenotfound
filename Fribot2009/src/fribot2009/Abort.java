@@ -7,7 +7,7 @@ import lejos.robotics.navigation.Navigator;
 public class Abort extends BehaviorParent {
 
 	public Abort(DifferentialPilot pilot, Navigator navi) {
-		super(pilot, navi);
+		super(pilot, navi, null, null, null, null);
 		// TODO Auto-generated constructor stub
 	}
 

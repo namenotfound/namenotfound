@@ -6,7 +6,7 @@ import lejos.robotics.navigation.Navigator;
 public class PushObject extends BehaviorParent {
 
 	public PushObject(DifferentialPilot pilot, Navigator navi) {
-		super(pilot, navi);
+		super(pilot, navi, null, null, null, null);
 		// TODO Auto-generated constructor stub
 	}
 

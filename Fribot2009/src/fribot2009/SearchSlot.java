@@ -6,7 +6,7 @@ import lejos.robotics.navigation.Navigator;
 public class SearchSlot extends BehaviorParent {
 
 	public SearchSlot(DifferentialPilot pilot, Navigator navi) {
-		super(pilot, navi);
+		super(pilot, navi, null, null, null, null);
 		// TODO Auto-generated constructor stub
 	}
 

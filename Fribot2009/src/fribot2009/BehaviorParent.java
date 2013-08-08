@@ -1,6 +1,8 @@
 package fribot2009;
 
-import lejos.nxt.NXTRegulatedMotor;
+import lejos.nxt.ColorSensor;
+import lejos.nxt.TouchSensor;
+import lejos.nxt.UltrasonicSensor;
 import lejos.robotics.navigation.DifferentialPilot;
 import lejos.robotics.navigation.Navigator;
 import lejos.robotics.navigation.Pose;
@@ -12,10 +14,18 @@ public class BehaviorParent implements Behavior {
 	protected boolean executed = false;
 	protected DifferentialPilot pilot;
 	protected Navigator navi;
+	protected UltrasonicSensor us;
+	protected ColorSensor cs;
+	protected TouchSensor ts1;
+	protected TouchSensor ts2;
 
-	public BehaviorParent(DifferentialPilot pilot, Navigator navi) {
+	public BehaviorParent(DifferentialPilot pilot, Navigator navi, UltrasonicSensor us, ColorSensor cs, TouchSensor ts1, TouchSensor ts2) {
 		this.pilot = pilot;
 		this.navi = navi;
+		this.us = us;
+		this.cs = cs;
+		this.ts1 = ts1;
+		this.ts2 = ts2;		
 	}
 
 	@Override

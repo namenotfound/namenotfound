@@ -29,7 +29,7 @@ public class Fribot2009 {
 		initNavi();
 		initSensors();
 		Behavior[] bev={new GotoFinish(pilot, navi, us, cs, ts1, ts2),new PlaceStilo(pilot, navi, us, cs, ts1, ts2),new PushObject(pilot, navi, us, cs, ts1, ts2),new SearchSlot(pilot, navi, us, cs, ts1, ts2)
-	,new Calibrate(pilot, navi, us, cs, ts1, ts2)
+	   ,new Calibrate(pilot, navi, us, cs, ts1, ts2)
 		,new Abort(pilot, navi, us, cs, ts1, ts2)
 		};
 		arbi=new Arbitrator(bev);
@@ -64,5 +64,7 @@ public class Fribot2009 {
 	{
 		LCD.drawString("Fribot 2009", 0, 0);
 		Button.waitForAnyPress();
+		Fribot2009 f9=new Fribot2009();
+		f9.run();
 	}
 }

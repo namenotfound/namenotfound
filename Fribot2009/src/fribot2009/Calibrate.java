@@ -1,5 +1,6 @@
 package fribot2009;
 
+import lejos.nxt.Button;
 import lejos.nxt.ColorSensor;
 import lejos.nxt.TouchSensor;
 import lejos.nxt.UltrasonicSensor;
@@ -30,16 +31,22 @@ public class Calibrate extends BehaviorParent {
 	
 	private void calTravelDistance()
 	{
-		
+		travel(10,false);
 	}
 	
 	private void calRotation()
 	{
+		rotate(180,false);
+		
+		
 	}
 	
 	private void calCentralMotor()
 	{
-		
+		Constants.motorCentral.setSpeed(Constants.motorCentralSpeed);
+		Constants.motorCentral.rotate(Constants.motorCentralRotVal);
+		Button.waitForAnyPress();
+		Constants.motorCentral.rotate(-Constants.motorCentralRotVal);
 	}
 	
 	

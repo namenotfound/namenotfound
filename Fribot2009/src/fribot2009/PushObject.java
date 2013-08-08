@@ -37,7 +37,7 @@ public class PushObject extends BehaviorParent {
 			navi.stop();
 			navi.clearPath();
 			
-			travel(-5,true);
+			travel(-2,true);
 			if (waitForStop()){
 				navi.stop();
 				navi.clearPath();

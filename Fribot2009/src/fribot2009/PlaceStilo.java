@@ -54,6 +54,7 @@ public class PlaceStilo extends BehaviorParent {
 				int max=3;
 				while(cs.getColor().getColor()!=Color.BLACK)
 				{
+					pilot.setTravelSpeed(Constants.speedInsane);
 					rotate(rotfactor* 5, true);
 					count++;
 					if(waitForStop())
@@ -67,6 +68,7 @@ public class PlaceStilo extends BehaviorParent {
 						rotfactor*=-1;
 					}
 				}
+				pilot.setTravelSpeed(Constants.speedSlow);
 				travel(100,true);
 			}if(suppressed)
 			{
@@ -76,6 +78,7 @@ public class PlaceStilo extends BehaviorParent {
 		}
 		navi.stop();
 		navi.clearPath();
+		pilot.setTravelSpeed(Constants.speedFast);
 		travel(-10,true);
 		if(waitForStop())
 		{

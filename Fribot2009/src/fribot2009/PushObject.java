@@ -58,5 +58,10 @@ public class PushObject extends BehaviorParent {
 		executed = true;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Push Object";
+	}
 	
 }

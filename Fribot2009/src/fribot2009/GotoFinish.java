@@ -31,5 +31,11 @@ public class GotoFinish extends BehaviorParent {
 		executed=true;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "GoTo Finish";
+	}
+	
 	
 }

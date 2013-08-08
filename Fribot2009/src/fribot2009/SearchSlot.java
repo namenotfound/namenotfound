@@ -66,5 +66,10 @@ public class SearchSlot extends BehaviorParent {
 		return false;
 	}
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Search Slot";
+	}
 	
 }

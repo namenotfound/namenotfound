@@ -1,8 +1,10 @@
 package fribot2009;
 
 import lejos.nxt.ColorSensor;
+import lejos.nxt.LCD;
 import lejos.nxt.NXTMotor;
 import lejos.nxt.NXTRegulatedMotor;
+import lejos.nxt.Sound;
 import lejos.nxt.TouchSensor;
 import lejos.nxt.UltrasonicSensor;
 import lejos.robotics.navigation.DifferentialPilot;
@@ -38,6 +40,9 @@ public class BehaviorParent implements Behavior {
 	@Override
 	public void action() {
 		suppressed = false;
+		LCD.clear(2);
+		LCD.drawString(this.toString(), 0, 2);
+		Sound.playTone(2500, 500);
 	}
 
 	@Override

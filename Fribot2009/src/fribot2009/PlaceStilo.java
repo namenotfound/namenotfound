@@ -71,5 +71,10 @@ public class PlaceStilo extends BehaviorParent {
 		executed=true;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Place Stilo";
+	}
 	
 }

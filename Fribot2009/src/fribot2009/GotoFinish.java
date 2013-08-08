@@ -18,12 +18,12 @@ public class GotoFinish extends BehaviorParent {
 		super.action();
 		
 		pilot.setTravelSpeed(Constants.speedFast);
-		navi.goTo(0, 0, 90);
+		navi.goTo(275, 100, 90);
 		if(waitForStop())
 		{
 			return;
 		}
-		navi.goTo(0, 0, 90);
+		navi.goTo(280, 170, 90);
 		if(waitForStop())
 		{
 			return;

@@ -81,7 +81,7 @@ public class PlaceStilo extends BehaviorParent {
 		}
 		navi.stop();
 		navi.clearPath();
-		pilot.setTravelSpeed(Constants.speedFast);
+		pilot.setTravelSpeed(Constants.speedInsane);
 		travel(-10,true);
 		if(waitForStop())
 		{
@@ -93,7 +93,7 @@ public class PlaceStilo extends BehaviorParent {
 		{
 			return;
 		}
-		Constants.motorCentral.rotate(-Constants.motorCentralRotVal-105,true);
+		Constants.motorCentral.rotate(-Constants.motorCentralRotVal-125,true);
 		if(waitForMotorStop(Constants.motorCentral))
 		{
 			return;

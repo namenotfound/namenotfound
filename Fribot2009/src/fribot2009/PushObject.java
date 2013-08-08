@@ -63,7 +63,7 @@ public class PushObject extends BehaviorParent {
 			}
 			navi.stop();
 			navi.clearPath();
-			pilot.setTravelSpeed(Constants.speedMedium);
+			pilot.setTravelSpeed(Constants.speedInsane);
 			travel(-range, true);
 			if (waitForStop()){
 				return;
@@ -71,7 +71,7 @@ public class PushObject extends BehaviorParent {
 		}
 		
 		// goTo behavior end position
-		pilot.setTravelSpeed(Constants.speedFast);
+		pilot.setTravelSpeed(Constants.speedInsane);
 		navi.goTo(210, 65,0);
 		if(waitForStop())
 		{

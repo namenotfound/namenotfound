@@ -17,13 +17,13 @@ public class GotoFinish extends BehaviorParent {
 	public void action() {
 		super.action();
 		
-		pilot.setTravelSpeed(Constants.speedFast);
+		pilot.setTravelSpeed(Constants.speedInsane);
 		navi.goTo(275, 130, 90);
 		if(waitForStop())
 		{
 			return;
 		}
-		navi.goTo(290, 200, 90);
+		navi.goTo(280, 200, 90);
 		if(waitForStop())
 		{
 			return;

@@ -13,9 +13,9 @@ public class Constants {
 	public static final int speedSlow=8;
 	public static final int speedMedium=16;
 	public static final int speedFast=25;
-	public static final int speedInsane=40;
+	public static final int speedInsane=60;
 	
-	public static final int motorCentralRotVal=100;
+	public static final int motorCentralRotVal=70;
 	public static final int motorCentralSpeed=360;
 	
 	public static final float trackWidth=17.2f;

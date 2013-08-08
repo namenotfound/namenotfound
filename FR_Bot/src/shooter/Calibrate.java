@@ -61,6 +61,9 @@ public class Calibrate extends BehaviorParent{
 	
 	private void CalNavi()
 	{
+		
+		rotate(180,false);
+		
 	//	travel(10,false);
 	
 	}

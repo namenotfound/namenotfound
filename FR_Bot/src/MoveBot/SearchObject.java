@@ -52,7 +52,7 @@ public class SearchObject extends BehaviorParent{
 		{
 			return;
 		}
-		travel(range,true);
+		travel(range-2,true);
 		if(waitForStop())
 		{
 			return;
@@ -64,7 +64,7 @@ public class SearchObject extends BehaviorParent{
 	private int adjust(int range,int dir,boolean gotBEtter)
 	{
 		rotate(5*dir,true);
-		Delay.msDelay(500);
+		Delay.msDelay(200);
 		int tmprng=(int)us.getRange();
 		if(tmprng>range)
 		{

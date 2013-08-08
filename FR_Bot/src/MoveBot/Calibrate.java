@@ -60,7 +60,8 @@ public class Calibrate extends BehaviorParent{
 	
 	private void CalNavi()
 	{
-		rotate(90,false);
+		rotate(180,false);
+	//	waitForStop();
 	//	travel(10,false);
 	
 	}

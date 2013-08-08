@@ -13,7 +13,7 @@ public class GoToPickup extends BehaviorParent{
 	public void action() {
 		super.action();
 		pilot.setTravelSpeed(Constants.speedFast);
-		navi.goTo(125, 45, 0);
+		navi.goTo(125, 40, 0);
 		if(waitForStop())
 		{
 			return;

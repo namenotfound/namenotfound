@@ -23,7 +23,7 @@ public class GoToDropOff extends BehaviorParent{
 		}
 		else if(color==Color.BLUE)
 		{
-			navi.goTo(220, 65, 0);
+			navi.goTo(225, 65, 0);
 		}
 		else{
 			System.exit(0);

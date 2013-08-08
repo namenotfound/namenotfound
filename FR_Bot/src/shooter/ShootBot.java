@@ -9,13 +9,13 @@ import lejos.robotics.subsumption.Arbitrator;
 import lejos.robotics.subsumption.Behavior;
 import lejos.util.Delay;
 
-public class MoveBot {
+public class ShootBot {
 
 	private Arbitrator arbi;
 	private DifferentialPilot pilot;
 	
 	
-	public MoveBot()
+	public ShootBot()
 	{
 		initPilot();
 		
@@ -46,7 +46,7 @@ public class MoveBot {
 	{
 		LCD.drawString("Move Bot", 0, 0);
 		Button.waitForAnyPress();
-		MoveBot mb=new MoveBot();
+		ShootBot mb=new ShootBot();
 		mb.run();
 	}
 }

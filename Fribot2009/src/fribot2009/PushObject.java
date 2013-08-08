@@ -54,6 +54,8 @@ public class PushObject extends BehaviorParent {
 		pilot.setTravelSpeed(Constants.speedFast);
 		float currentY = navi.getPoseProvider().getPose().getY();
 		navi.goTo(210, currentY);
+		
+		executed = true;
 	}
 
 	

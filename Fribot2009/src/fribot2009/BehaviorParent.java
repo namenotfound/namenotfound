@@ -36,6 +36,12 @@ public class BehaviorParent implements Behavior {
 	protected void rotate(int angle, boolean imediateReturn) {
 		float currentHeading = navi.getPoseProvider().getPose().getHeading();
 		navi.rotateTo(currentHeading + angle);
+		
+		if(!imediateReturn){
+			while(navi.isMoving()){
+				Thread.yield();
+			}
+		}
 	}
 	
 	protected void travel(int distance, boolean imediateReturn){

@@ -13,11 +13,11 @@ public class Constants {
 	public static final int speedMedium=16;
 	public static final int speedFast=25;
 	
-	public static final int motorCentralRotVal=30;
-	public static final int motorCentralSpeed=200;
+	public static final int motorCentralRotVal=100;
+	public static final int motorCentralSpeed=360;
 	
-	public static final float trackWidth=12;
-	public static final double wheelDiameterOffset=0f;
+	public static final float trackWidth=17f;
+	public static final double wheelDiameterOffset=-0.1f;
 	
 	
 }

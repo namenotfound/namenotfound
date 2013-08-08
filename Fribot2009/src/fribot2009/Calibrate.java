@@ -23,9 +23,9 @@ public class Calibrate extends BehaviorParent {
 	public void action() {
 		super.action();
 		
-		calTravelDistance();
+	//	calTravelDistance();
 	//	calRotation();
-	//	calCentralMotor();
+		calCentralMotor();
 		System.exit(0);
 	}
 	
@@ -45,8 +45,7 @@ public class Calibrate extends BehaviorParent {
 	{
 		Constants.motorCentral.setSpeed(Constants.motorCentralSpeed);
 		Constants.motorCentral.rotate(Constants.motorCentralRotVal);
-		Button.waitForAnyPress();
-		Constants.motorCentral.rotate(-Constants.motorCentralRotVal);
+		Constants.motorCentral.rotate(-Constants.motorCentralRotVal-55);
 	}
 	
 	

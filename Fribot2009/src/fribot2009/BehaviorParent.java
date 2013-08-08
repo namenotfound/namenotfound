@@ -1,6 +1,7 @@
 package fribot2009;
 
 import lejos.nxt.ColorSensor;
+import lejos.nxt.NXTMotor;
 import lejos.nxt.TouchSensor;
 import lejos.nxt.UltrasonicSensor;
 import lejos.robotics.navigation.DifferentialPilot;
@@ -30,7 +31,7 @@ public class BehaviorParent implements Behavior {
 
 	@Override
 	public boolean takeControl() {
-		return executed;
+		return !executed;
 	}
 
 	@Override
@@ -100,6 +101,16 @@ public class BehaviorParent implements Behavior {
 	private boolean waitForNaviStop() {
 		while (navi.isMoving()) {
 			if (suppressed) {
+				return true;
+			}
+			Thread.yield();
+		}
+		return false;
+	}
+	
+	protected boolean waitForMotorStop(NXTMotor motor){
+		while (motor.isMoving()){
+			if (suppressed){
 				return true;
 			}
 			Thread.yield();

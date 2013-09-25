@@ -35,7 +35,41 @@ public abstract class BehaviorParent implements Behavior {
 		
 	}
 
-
-	
+	public boolean waitForStop()
+	{
+		if(navi.isMoving())
+		{
+			return waitForNaviStop();
+		}
+		if(pilot.isMoving())
+		{
+			return waitForPilotStop();
+		}
+		return true;
+	}
+	public boolean waitForNaviStop()
+	{
+		while(navi.isMoving())
+		{
+			if(supressed)
+			{
+				return false;
+			}
+			Thread.yield();
+		}
+		return true;
+	}
+	public boolean waitForPilotStop()
+	{
+		while(pilot.isMoving())
+		{
+			if(supressed)
+			{
+				return false;
+			}
+			Thread.yield();
+		}
+		return true;
+	}
 	
 }

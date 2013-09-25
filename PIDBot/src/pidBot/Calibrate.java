@@ -2,6 +2,7 @@ package pidBot;
 
 import lejos.nxt.LCD;
 import lejos.robotics.navigation.Waypoint;
+import lejos.util.Delay;
 
 public class Calibrate extends BehaviorParent {
 
@@ -10,9 +11,27 @@ public class Calibrate extends BehaviorParent {
 		// TODO Auto-generated method stub
 		super.action();
 		
-		calOdometry();
-		
+		//calOdometry();
+		//calLight();
+		calTurn();
 		executed=true;
+		
+	}
+	
+	
+	private void calLight()
+	{
+		
+		while(!supressed)
+		{
+			
+			int i=light.getRawLightValue();
+			LCD.clear(2);
+			LCD.drawInt(i, 3, 0, 2);
+			Delay.msDelay(500);
+			
+			
+		}
 		
 	}
 	
@@ -29,6 +48,30 @@ public class Calibrate extends BehaviorParent {
 		
 		navi.goTo(0, 0, 0);
 		LCD.drawString(navi.getPoseProvider().getPose().toString()+"", 0, 2);
+	}
+	
+	private void calTurn()
+	{
+		pilot.setTravelSpeed(Constants.SPEEDSLOW);
+		//pilot.forward();
+		
+		//Delay.msDelay(1000);
+		
+		pilot.steer(60);
+		
+		
+		
+		
+		for(int i=0;i<10;i++)
+		{
+			Delay.msDelay(500);
+		LCD.drawString(navi.getPoseProvider().getPose().toString(), 0, 2);
+		LCD.drawString(navi.getPoseProvider().getPose().getHeading()+"", 0,3 );
+		}
+		pilot.stop();
+	//	pilot.steer(-60);
+		
+		Delay.msDelay(2000);
 	}
 	
 	@Override

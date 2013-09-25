@@ -16,7 +16,8 @@ public class pidBot {
 		Delay.msDelay(1000);
 		Constants.init();
 		Behavior[] behavior={
-				new Calibrate(),
+				new LineFollower(),
+				//new Calibrate(),
 				new Abort()
 		};
 		

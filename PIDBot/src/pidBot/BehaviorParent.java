@@ -1,5 +1,6 @@
 package pidBot;
 
+import lejos.nxt.ColorSensor;
 import lejos.nxt.LCD;
 import lejos.nxt.LightSensor;
 import lejos.nxt.Sound;
@@ -12,15 +13,14 @@ import lejos.robotics.subsumption.Behavior;
 
 public abstract class BehaviorParent implements Behavior {
 
-	private boolean supressed=false;
+	protected boolean supressed=false;
 	protected boolean executed=false;
 	protected DifferentialPilot pilot=Constants.PILOT;
 	protected Navigator navi=Constants.NAVI;
 	protected TouchSensor ts1=Constants.TS1;
 	protected TouchSensor ts2=Constants.TS2;
 	protected UltrasonicSensor us=Constants.US;
-	protected LightSensor light=Constants.LIGHT;
-	protected OdometryPoseProvider pose=Constants.POSE;
+	protected ColorSensor light=Constants.LIGHT;
 	
 	
 	@Override

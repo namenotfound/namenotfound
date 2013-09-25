@@ -1,5 +1,6 @@
 package pidBot;
 
+import lejos.nxt.ColorSensor;
 import lejos.nxt.LightSensor;
 import lejos.nxt.Motor;
 import lejos.nxt.NXTRegulatedMotor;
@@ -19,7 +20,7 @@ public class Constants {
 	public static DifferentialPilot PILOT;
 	public static TouchSensor TS1;
 	public static TouchSensor TS2;
-	public static LightSensor LIGHT;
+	public static ColorSensor LIGHT;
 	public static UltrasonicSensor US;
 	
 	public static float TRACKWIDTH=17.2f;
@@ -44,7 +45,7 @@ public class Constants {
 		initNavigation();
 		
 	//	initTouch();
-	//	initLight();
+		initLight();
 	//	initUS();		
 		initialised=true;
 	}
@@ -67,7 +68,7 @@ public class Constants {
 	}
 	private static void initLight()
 	{
-		LIGHT=new LightSensor(SensorPort.S3);
+		LIGHT=new ColorSensor(SensorPort.S3);
 	}
 	private static void initTouch()
 	{

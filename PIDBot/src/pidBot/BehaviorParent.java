@@ -13,6 +13,7 @@ import lejos.robotics.subsumption.Behavior;
 public abstract class BehaviorParent implements Behavior {
 
 	private boolean supressed=false;
+	protected boolean executed=false;
 	protected DifferentialPilot pilot=Constants.PILOT;
 	protected Navigator navi=Constants.NAVI;
 	protected TouchSensor ts1=Constants.TS1;
@@ -21,11 +22,18 @@ public abstract class BehaviorParent implements Behavior {
 	protected LightSensor light=Constants.LIGHT;
 	protected OdometryPoseProvider pose=Constants.POSE;
 	
+	
+	@Override
+	public boolean takeControl() {
+		// TODO Auto-generated method stub
+		return !executed;
+	}
+	
 	@Override
 	public void action() {
 		supressed=false;
 		LCD.clear(2);
-		LCD.drawString(this.toString(), 0, 2);
+		LCD.drawString(this.toString(), 0, 1);
 		Sound.playTone(2500, 500);
 	}
 
@@ -35,7 +43,7 @@ public abstract class BehaviorParent implements Behavior {
 		
 	}
 
-	public boolean waitForStop()
+	protected boolean waitForStop()
 	{
 		if(navi.isMoving())
 		{
@@ -47,7 +55,7 @@ public abstract class BehaviorParent implements Behavior {
 		}
 		return true;
 	}
-	public boolean waitForNaviStop()
+	private boolean waitForNaviStop()
 	{
 		while(navi.isMoving())
 		{
@@ -59,7 +67,7 @@ public abstract class BehaviorParent implements Behavior {
 		}
 		return true;
 	}
-	public boolean waitForPilotStop()
+	private boolean waitForPilotStop()
 	{
 		while(pilot.isMoving())
 		{

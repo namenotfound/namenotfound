@@ -24,14 +24,15 @@ public class LineFollower extends BehaviorParent {
 		controller.setPIDParam(PIDController.PID_KI, 0.001f);
 		controller.setPIDParam(PIDController.PID_KD, 60);
 		controller.freezeIntegral(false);
-		controller.setPIDParam(PIDController.PID_LIMITLOW, -2000);
-		controller.setPIDParam(PIDController.PID_I_LIMITHIGH, 2000);
-		controller.setPIDParam(PIDController.PID_I_LIMITLOW, 15);
+	//	controller.setPIDParam(PIDController.PID_LIMITLOW, -2000);
+	//	controller.setPIDParam(PIDController.PID_I_LIMITHIGH, 2000);
+	//	controller.setPIDParam(PIDController.PID_I_LIMITLOW, 3);
+		controller.setPIDParam(PIDController.PID_DEADBAND, 10);
 		pilot.setTravelSpeed(Constants.SPEEDMEDIUM);
 		pilot.forward();
 		pilot.setAcceleration(160);  //160
 		int time=0;
-		while(!supressed&&time<3000)
+		while(!supressed&&time<30000)
 		{
 			lightval=light.getRawLightValue();
 			steerval=controller.doPID(lightval);

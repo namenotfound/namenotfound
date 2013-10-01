@@ -28,6 +28,11 @@ public class LineFollower extends BehaviorParent {
 	//	controller.setPIDParam(PIDController.PID_I_LIMITHIGH, 2000);
 	//	controller.setPIDParam(PIDController.PID_I_LIMITLOW, 3);
 		controller.setPIDParam(PIDController.PID_DEADBAND, 10);
+
+		//1.) Integralkontrolle durch high/low limit.
+		//2.) Integralkontrolle durch setzen auf 0 bei nulldurchlauf
+		
+		//3.) Den D Wert (delta letzter zu diesem wert) nutzen => anderes system=> integral ist jetz beschleunigung des fehlers...
 		pilot.setTravelSpeed(Constants.SPEEDMEDIUM);
 		pilot.forward();
 		pilot.setAcceleration(160);  //160

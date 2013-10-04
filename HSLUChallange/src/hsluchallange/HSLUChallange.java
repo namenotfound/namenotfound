@@ -16,7 +16,7 @@ public class HSLUChallange {
 		Delay.msDelay(1000);
 		Constants.init();
 		Behavior[] behavior={
-				new Calibrate(),
+				//new Calibrate(),
 				new Abort()
 		};
 		

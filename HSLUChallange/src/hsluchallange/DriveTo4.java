@@ -14,12 +14,8 @@ public class DriveTo4 extends DriveToParent {
 
 		pilot.setTravelSpeed(Constants.SPEEDMEDIUM);
 
-		pilot.travel(-10);
-		if (waitForStop()) {
-			return;
-		}
 
-		navi.goTo((float) Constants.X4.getX() + 15, (float) Constants.X4.getY(), 180f);
+		navi.goTo((float) Constants.X4.getX() + 20, (float) Constants.X4.getY()-8, 180f);
 		if (waitForStop()) {
 			return;
 		}

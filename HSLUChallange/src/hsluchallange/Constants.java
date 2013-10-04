@@ -44,7 +44,7 @@ public class Constants {
 	public static Point START =new Point(57,20+(int)(TRACKWIDTH/2));
 	public static Point X1=new Point(262,48);
 	public static Point X2=new Point(225,120);
-	public static Point X3=new Point(150,117);
+	public static Point X3=new Point(150,120);
 	public static Point X4=new Point(43,156);
 	public static Point X5=new Point(150,84);
 	public static Point X6=new Point(74,84);
@@ -73,7 +73,7 @@ public class Constants {
 	private static void initNavigation()
 	{
 		NAVI=new Navigator(PILOT);
-		NAVI.getPoseProvider().setPose(new Pose(0, 0,0));
+		NAVI.getPoseProvider().setPose(new Pose(54, 27,0));
 	}
 	private static void initUS()
 	{

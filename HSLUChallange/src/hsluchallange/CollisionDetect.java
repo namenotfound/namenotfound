@@ -9,7 +9,8 @@ public class CollisionDetect extends BehaviorParent{
 	}
 
 	public void setActive(boolean active) {
-		this.active = active;
+		
+		//this.active = active;
 	}
 
 	@Override

@@ -13,13 +13,9 @@ public class DriveTo6 extends DriveToParent {
 		cd.setActive(true);
 
 		pilot.setTravelSpeed(Constants.SPEEDMEDIUM);
-		navi.goTo((float) Constants.X6.getX(), (float) Constants.X3.getY(), 180f);
-		if (waitForStop()) {
-			return;
-		}
 
-		navi.goTo((float) Constants.X6.getX(), (float) Constants.X3.getY(),
-				-90f);
+		navi.goTo((float) Constants.X6.getX()-5, (float) Constants.X6.getY()+10,
+				-70f);
 		if (waitForStop()) {
 			return;
 		}

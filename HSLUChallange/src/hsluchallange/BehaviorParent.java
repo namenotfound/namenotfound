@@ -49,18 +49,19 @@ public abstract class BehaviorParent implements Behavior {
 		if (pilot.isMoving()) {
 			return waitForPilotStop();
 		}
-		return true;
+		return false;
 	}
 
 	private boolean waitForNaviStop() {
 		while (navi.isMoving()) {
 			if (supressed) {
 				navi.stop();
-				return false;
+				navi.clearPath();
+				return true;
 			}
 			Thread.yield();
 		}
-		return true;
+		return false;
 	}
 
 	//test
@@ -68,11 +69,11 @@ public abstract class BehaviorParent implements Behavior {
 		while (pilot.isMoving()) {
 			if (supressed) {
 				pilot.stop();
-				return false;
+				return true;
 			}
 			Thread.yield();
 		}
-		return true;
+		return false;
 	}
 
 }

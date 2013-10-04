@@ -6,6 +6,7 @@ public class SpecialBlue extends DriveToParent {
 	
 	public SpecialBlue(DestroyBalloon db, CollisionDetect cd) {
 		super(db, cd);
+		executed=true;
 	}
 	
 	@Override

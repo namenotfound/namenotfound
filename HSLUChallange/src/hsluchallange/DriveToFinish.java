@@ -10,7 +10,7 @@ public class DriveToFinish extends BehaviorParent {
 
 		pilot.setTravelSpeed(Constants.SPEEDMEDIUM);
 
-		navi.goTo((float) Constants.END.getX()-20, (float) Constants.END.getY(), 90f);
+		navi.goTo((float) Constants.END.getX()-35, (float) Constants.END.getY()+40, 0f);
 		if (waitForStop()) {
 			return;
 		}

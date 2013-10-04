@@ -14,4 +14,10 @@ public class Abort extends BehaviorParent {
 		System.exit(0);
 	}
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Aborting Program";
+	}
+	
 }

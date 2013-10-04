@@ -11,7 +11,7 @@ public class HSLUChallange {
 	
 	public static void main(String[] args)
 	{
-		LCD.drawString("PID Bot", 0, 0);
+		LCD.drawString("HSLU Challange", 0, 0);
 		Button.waitForAnyPress();
 		Delay.msDelay(1000);
 		Constants.init();

@@ -45,9 +45,9 @@ public class DestroyBalloon extends BehaviorParent {
 				}
 				canExecute=false;
 			}
-			Constants.MOTORMIDDLE.setAcceleration(200);
-			Constants.MOTORMIDDLE.rotate(120);
-			Constants.MOTORMIDDLE.rotate(-120, true);
+			Constants.MOTORMIDDLE.setAcceleration(900);
+			Constants.MOTORMIDDLE.rotate(20);
+			Constants.MOTORMIDDLE.rotate(-20, true);
 			pilot.travel(-(15 - hitDistanze));
 			if (waitForStop()) {
 				executed = true;

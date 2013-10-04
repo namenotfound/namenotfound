@@ -26,8 +26,8 @@ public class Constants {
 	public static ColorSensor LIGHT;
 	public static UltrasonicSensor US;
 	
-	public static float TRACKWIDTH=17.2f;
-	public static float WHEELDIAMETEROFFSET=-0.1f;
+	public static float TRACKWIDTH=12f;
+	public static float WHEELDIAMETEROFFSET=-0.11f;
 	public static NXTRegulatedMotor MOTORLEFT=Motor.A;
 	public static NXTRegulatedMotor MOTORRIGHT=Motor.C;
 	public static NXTRegulatedMotor MOTORMIDDLE=Motor.B;

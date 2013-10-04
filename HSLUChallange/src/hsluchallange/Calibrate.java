@@ -14,11 +14,34 @@ public class Calibrate extends BehaviorParent {
 
 		// calOdometry();
 		// calLight();
-		calColor();
+		//calColor();
+		//calcTurn();
+		//calcDist();
+		calcMiddle();
 		executed = true;
 
 	}
 
+	
+	private void calcTurn()
+	{
+		pilot.rotate(90);
+	}
+	
+	private void calcDist()
+	{
+		
+		pilot.travel(30);
+	}
+	
+	private void calcMiddle()
+	{
+		Constants.MOTORMIDDLE.setAcceleration(900);
+		Constants.MOTORMIDDLE.rotate(200);
+		Constants.MOTORMIDDLE.rotate(-200,true);
+	}
+	
+	
 	private void calColor() {
 		// RED = 0, BLUE = 2
 		while (!supressed) {

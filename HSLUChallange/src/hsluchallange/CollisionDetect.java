@@ -2,7 +2,7 @@ package hsluchallange;
 
 public class CollisionDetect extends BehaviorParent{
 
-	private boolean active=true;
+	private boolean active=false;
 	
 	public boolean isActive() {
 		return active;
@@ -31,5 +31,11 @@ public class CollisionDetect extends BehaviorParent{
 			return;
 		}
 	}
+
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Collision Detect";
+	}
 }

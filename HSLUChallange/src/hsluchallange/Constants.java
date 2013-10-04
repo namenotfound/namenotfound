@@ -57,9 +57,9 @@ public class Constants {
 		initPilot();
 		initNavigation();
 		
-	//	initTouch();
+		initTouch();
 		initLight();
-	//	initUS();		
+		initUS();		
 		initialised=true;
 	}
 	}
@@ -84,10 +84,6 @@ public class Constants {
 		LIGHT=new ColorSensor(SensorPort.S3);
 	}
 	private static void initTouch()
-
-
-	
-	
 	{
 		TS1=new TouchSensor(SensorPort.S1);
 		TS2=new TouchSensor(SensorPort.S2);

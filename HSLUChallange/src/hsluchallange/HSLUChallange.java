@@ -15,7 +15,17 @@ public class HSLUChallange {
 		Button.waitForAnyPress();
 		Delay.msDelay(1000);
 		Constants.init();
+		CollisionDetect cd=new CollisionDetect();
+		SpecialBlue sb=null;
+		DestroyBalloon db=new DestroyBalloon(sb);
+		sb=new SpecialBlue(db, cd);
 		Behavior[] behavior={
+					new DriveTo1(db, cd),new DriveTo2(db, cd),new DriveTo4(db, cd),new DriveTo6(db, cd),
+					sb,
+					new DriveTo3(db, cd),					
+					new DriveTo5(db, cd),
+					db,
+					cd,
 				//new Calibrate(),
 				new Abort()
 		};

@@ -57,4 +57,9 @@ public class DestroyBalloon extends BehaviorParent {
 		executed = true;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Destroy";
+	}
 }

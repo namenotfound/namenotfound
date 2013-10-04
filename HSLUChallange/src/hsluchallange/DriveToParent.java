@@ -8,5 +8,9 @@ public abstract class DriveToParent extends BehaviorParent {
 		this.db = db;
 		this.cd = cd;
 	}
+	
+	public void setExecuted(boolean executed){
+		this.executed = executed;
+	}
 
 }

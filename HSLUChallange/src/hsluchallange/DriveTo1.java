@@ -12,7 +12,7 @@ public class DriveTo1 extends DriveToParent {
 		super.action();
 		
 		pilot.setTravelSpeed(Constants.SPEEDMEDIUM);
-		navi.goTo((float)Constants.X1.getX()-2, (float)Constants.X1.getY()-2, 90.0f);
+		navi.goTo((float)Constants.X1.getX(), (float)Constants.X1.getY()-15, 90.0f);
 		if (waitForStop()) {
 			return;
 		}

@@ -63,6 +63,7 @@ public abstract class BehaviorParent implements Behavior {
 		return true;
 	}
 
+	//test
 	private boolean waitForPilotStop() {
 		while (pilot.isMoving()) {
 			if (supressed) {

@@ -40,15 +40,15 @@ public class Constants {
 	public static int SPEEDFAST=25;
 	public static int SPEEDINSANE=60;
 
-	
-	public static Point START =new Point(57,62);
+	//X5,X3,X6,X4    X2,X1 End
+	public static Point START =new Point(57,20+(int)(TRACKWIDTH/2));
 	public static Point X1=new Point(262,48);
 	public static Point X2=new Point(225,120);
 	public static Point X3=new Point(150,117);
 	public static Point X4=new Point(43,156);
 	public static Point X5=new Point(150,84);
 	public static Point X6=new Point(74,84);
-	public static Point END=new Point(247,137);
+	public static Point END=new Point(300,158);
 	
  	public static void init()
 	{

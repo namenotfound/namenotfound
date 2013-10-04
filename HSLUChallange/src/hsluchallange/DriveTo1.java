@@ -19,5 +19,11 @@ public class DriveTo1 extends DriveToParent {
 
 		executed = true;
 	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "DriveTo1";
+	}
 
 }

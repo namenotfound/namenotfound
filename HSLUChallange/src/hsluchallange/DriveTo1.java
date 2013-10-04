@@ -12,14 +12,14 @@ public class DriveTo1 extends DriveToParent {
 		super.action();
 		
 		pilot.setTravelSpeed(Constants.SPEEDMEDIUM);
-		navi.goTo((float)Constants.X1.getX(), (float)Constants.X1.getY()-15, 90.0f);
+		navi.goTo((float)Constants.X1.getX(), (float)Constants.X2.getY()-15, -90.0f);
 		if (waitForStop()) {
 			return;
 		}
 
 		executed = true;
 	}
-	
+	 
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

@@ -12,7 +12,7 @@ public class SpecialBlue extends DriveToParent {
 	public void action() {
 		super.action();
 		cd.setActive(true);
-		pilot.setTravelSpeed(Constants.SPEEDMEDIUM);
+		pilot.setTravelSpeed(Constants.SPEEDFAST);
 		if(executions==0)
 		{
 		navi.goTo((float)Constants.X5.getX()-15, (float)Constants.X5.getY(), 0.0f);

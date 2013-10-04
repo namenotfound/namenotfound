@@ -4,7 +4,7 @@ public class DriveTo4 extends DriveToParent {
 
 	public DriveTo4(DestroyBalloon db, CollisionDetect cd) {
 		super(db, cd);
-	}
+	} 
 
 	@Override
 	public void action() {

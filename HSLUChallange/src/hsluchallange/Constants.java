@@ -36,7 +36,7 @@ public class Constants {
 	
 	public static int SPEEDTOUCH=4;
 	public static int SPEEDSLOW=8;
-	public static int SPEEDMEDIUM=16;
+	public static int SPEEDMEDIUM=25;
 	public static int SPEEDFAST=25;
 	public static int SPEEDINSANE=60;
 

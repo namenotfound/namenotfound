@@ -1,6 +1,5 @@
 package hsluchallange;
 
-
 import lejos.nxt.ColorSensor;
 import lejos.nxt.LCD;
 import lejos.nxt.LightSensor;
@@ -14,25 +13,24 @@ import lejos.robotics.subsumption.Behavior;
 
 public abstract class BehaviorParent implements Behavior {
 
-	protected boolean supressed=false;
-	protected boolean executed=false;
-	protected DifferentialPilot pilot=Constants.PILOT;
-	protected Navigator navi=Constants.NAVI;
-	protected TouchSensor ts1=Constants.TS1;
-	protected TouchSensor ts2=Constants.TS2;
-	protected UltrasonicSensor us=Constants.US;
-	protected ColorSensor light=Constants.LIGHT;
-	
-	
+	protected boolean supressed = false;
+	protected boolean executed = false;
+	protected DifferentialPilot pilot = Constants.PILOT;
+	protected Navigator navi = Constants.NAVI;
+	protected TouchSensor ts1 = Constants.TS1;
+	protected TouchSensor ts2 = Constants.TS2;
+	protected UltrasonicSensor us = Constants.US;
+	protected ColorSensor light = Constants.LIGHT;
+
 	@Override
 	public boolean takeControl() {
 		// TODO Auto-generated method stub
 		return !executed;
 	}
-	
+
 	@Override
 	public void action() {
-		supressed=false;
+		supressed = false;
 		LCD.clear(2);
 		LCD.drawString(this.toString(), 0, 1);
 		Sound.playTone(2500, 500);
@@ -40,46 +38,40 @@ public abstract class BehaviorParent implements Behavior {
 
 	@Override
 	public void suppress() {
-		supressed=true;
-		
+		supressed = true;
+
 	}
 
-	protected boolean waitForStop()
-	{
-		if(navi.isMoving())
-		{
+	protected boolean waitForStop() {
+		if (navi.isMoving()) {
 			return waitForNaviStop();
 		}
-		if(pilot.isMoving())
-		{
+		if (pilot.isMoving()) {
 			return waitForPilotStop();
 		}
 		return true;
 	}
-	private boolean waitForNaviStop()
-	{
-		while(navi.isMoving())
-		{
-			if(supressed)
-			{
+
+	private boolean waitForNaviStop() {
+		while (navi.isMoving()) {
+			if (supressed) {
+				navi.stop();
 				return false;
 			}
 			Thread.yield();
 		}
 		return true;
 	}
-	private boolean waitForPilotStop()
-	{
-		while(pilot.isMoving())
-		{
-			if(supressed)
-			{
+
+	private boolean waitForPilotStop() {
+		while (pilot.isMoving()) {
+			if (supressed) {
+				pilot.stop();
 				return false;
 			}
 			Thread.yield();
 		}
 		return true;
 	}
-	
-	
+
 }

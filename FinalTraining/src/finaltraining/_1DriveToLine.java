@@ -15,7 +15,7 @@ public class _1DriveToLine extends BehaviorParent {
 		navi.goTo(35, 140, 0);
 		if(!waitForStop()){
 			return;
-		}
+		}  
 		
 		// finde schwarze linie
 		pilot.setTravelSpeed(Constants.SPEEDMEDIUM);

@@ -18,7 +18,9 @@ public class FinalTraining {
 		Constants.init();
 		Behavior[] b={
 				
-				new _2_Linefollower(),
+				new _4GetBall(),
+			//	new _3PickBall(),
+			//	new _2_Linefollower(),
 				//new _1DriveToLine(),
 				
 				//new Calibrate(),

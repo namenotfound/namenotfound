@@ -16,12 +16,19 @@ public class Calibrate extends BehaviorParent {
 
 		//calTurn();
 		
-		calDist();
-		
+		//calDist();
+		calMid();
 		//calColor();
 		System.exit(0);
 	}
 
+	
+	private void calMid()
+	{
+		Constants.MOTORMIDDLE.setAcceleration(900);
+		Constants.MOTORMIDDLE.rotate(160);
+	
+	}
 	
 	private void calDist()
 	{

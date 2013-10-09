@@ -3,6 +3,7 @@ package finaltraining;
 import java.util.Timer;
 
 import lejos.nxt.LCD;
+import lejos.robotics.navigation.Pose;
 import lejos.util.PIDController;
 
 public class _2_Linefollower extends BehaviorParent {
@@ -23,7 +24,7 @@ public class _2_Linefollower extends BehaviorParent {
 		
 		us.continuous();
 		int counter=0;
-		while(!suppressed&&(us.getRange()>25||counter<200))
+		while(!suppressed&&(us.getRange()>25||counter<300))
 		{
 			LCD.clear(3);
 			LCD.drawInt(counter, 4, 0, 3);
@@ -34,12 +35,25 @@ public class _2_Linefollower extends BehaviorParent {
 		pilot.setAcceleration(160);
 		controller.setPIDParam(PIDController.PID_KP, 1); 
 		pilot.setTravelSpeed(Constants.SPEEDFAST);
+		
+		Pose p=navi.getPoseProvider().getPose();
+		
 		while(!suppressed&&!ts1.isPressed())
 		{
+			Pose p2=navi.getPoseProvider().getPose();
+			int delta=(int)Math.abs(p2.getX()-p.getX());
+			delta+=(int)Math.abs(p2.getY()-p.getY());
+			if(delta>=20)
+			{
+				break;
+			}
 				doPID();
 		}
 		
 		pilot.stop();
+		
+		navi.getPoseProvider().setPose(new Pose(228, 100, 0));
+		
 		executed=true;
 	}
 	

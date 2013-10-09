@@ -19,7 +19,7 @@ public class _3PickBall extends BehaviorParent {
 		pilot.setAcceleration(Constants.DEFAULTACCELERATON);
 		pilot.setTravelSpeed(Constants.SPEEDFAST);
 		// rückwärts fahren
-		pilot.travel(-10);
+		pilot.travel(-10,true);
 		if(!waitForStop()){
 			return;
 		}
@@ -29,6 +29,7 @@ public class _3PickBall extends BehaviorParent {
 			return;
 		}
 		// suche farbe auf blatt
+		pilot.setTravelSpeed(Constants.SPEEDSLOW);
 		pilot.forward();
 		while (cs.getColor().getColor() != Color.BLUE && cs.getColor().getColor() != Color.RED) {
 			if(suppressed){

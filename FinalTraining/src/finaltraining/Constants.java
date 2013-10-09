@@ -60,11 +60,12 @@ public class Constants {
 	{
 		PILOT =new DifferentialPilot(DifferentialPilot.WHEEL_SIZE_NXT2+WHEELDIAMETEROFFSETLEFT, DifferentialPilot.WHEEL_SIZE_NXT2+WHEELDIAMETEROFFSETRIGHT,
 				TRACKWIDTH, MOTORLEFT, MOTORRIGHT, true);
+		PILOT.setAcceleration(DEFAULTACCELERATON);
 	}
 	private static void initNavi()
 	{
 		NAVI=new Navigator(PILOT);
-		NAVI.getPoseProvider().setPose(new Pose(0,0,0));
+		NAVI.getPoseProvider().setPose(new Pose(42-Constants.TRACKWIDTH/2,42,90));
 	}
 	private static void initUs()
 	{

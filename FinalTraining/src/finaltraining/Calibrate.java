@@ -14,9 +14,25 @@ public class Calibrate extends BehaviorParent {
 	public void action() {
 		super.action();
 
-		caliLS();
+		calTurn();
+		
+		//calDist();
+		
+		//calColor();
 	}
 
+	
+	private void calDist()
+	{
+		pilot.travel(40);
+	}
+	
+	private void calTurn()
+	{
+		pilot.rotate(90);
+	}
+	
+	
 	private void caliLS() {
 		while (!suppressed) {
 			LCD.drawInt(cs.getRawLightValue(), 0, 4);
@@ -24,6 +40,15 @@ public class Calibrate extends BehaviorParent {
 		}
 	}
 
+	private void calColor()
+	{
+		while (!suppressed) {
+			LCD.drawInt(cs.getColor().getColor(), 0, 4);
+			Delay.msDelay(500);
+		}
+	
+	}
+	
 	@Override
 	public String toString() {
 		return "Calibrate";

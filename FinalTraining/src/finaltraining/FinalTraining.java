@@ -10,7 +10,7 @@ public class FinalTraining {
 
 	
 	
-	public void main(String[] args)
+	public static void main(String[] args)
 	{
 		LCD.drawString("FINAL Training", 0, 0);
 		Button.waitForAnyPress();

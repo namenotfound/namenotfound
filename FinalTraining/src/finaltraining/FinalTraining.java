@@ -17,7 +17,11 @@ public class FinalTraining {
 		Delay.msDelay(1000);
 		Constants.init();
 		Behavior[] b={
-				new Calibrate(),
+				
+				new _2_Linefollower(),
+				//new _1DriveToLine(),
+				
+				//new Calibrate(),
 				new Abort()
 		};
 		

@@ -12,23 +12,24 @@ public class _1DriveToLine extends BehaviorParent {
 		pilot.setTravelSpeed(Constants.SPEEDFAST);
 		
 		//
-		navi.goTo(44, 140, 0);
+		navi.goTo(40, 140, 0);
 		if(!waitForStop()){
 			return;
 		}
 		
 		// finde schwarze linie
+		pilot.setTravelSpeed(Constants.SPEEDMEDIUM);
 		pilot.forward();
 		while(cs.getColor().getColor() != Color.BLACK){
-			Delay.msDelay(100);
+			Delay.msDelay(50);
 			if(suppressed){
 				return;
 			}
 		}
 		
-		pilot.setTravelSpeed(Constants.SPEEDMEDIUM);
+		pilot.setTravelSpeed(Constants.SPEEDSLOW);
 		while(cs.getColor().getColor() != Color.WHITE){
-			Delay.msDelay(100);
+			Delay.msDelay(50);
 			if(suppressed){
 				return;
 			}

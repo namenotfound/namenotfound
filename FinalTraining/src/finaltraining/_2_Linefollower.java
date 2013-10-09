@@ -14,16 +14,16 @@ public class _2_Linefollower extends BehaviorParent {
 		
 		controller=new PIDController(480, 1);
 		
-		controller.setPIDParam(PIDController.PID_KP, 12);
+		controller.setPIDParam(PIDController.PID_KP, 4);  //5
 		controller.setPIDParam(PIDController.PID_KI, 0);
 		controller.setPIDParam(PIDController.PID_KD, 0);
-		
-		pilot.setAcceleration(200);
+		controller.freezeIntegral(true);
+		pilot.setAcceleration(160);
 		pilot.setTravelSpeed(Constants.SPEEDMEDIUM);
 		
-		
+		us.continuous();
 		int counter=0;
-		while(!suppressed&&counter<10000)
+		while(!suppressed&&(us.getRange()>20||counter<400))
 		{
 			LCD.clear(3);
 			LCD.drawInt(counter, 4, 0, 3);
@@ -49,7 +49,7 @@ public class _2_Linefollower extends BehaviorParent {
 		LCD.clear(4);
 		LCD.drawInt(error, 3, 0, 4);
 		
-		pilot.steer(error/7f);
+		pilot.steer(error/10f);
 		
 	}
 	

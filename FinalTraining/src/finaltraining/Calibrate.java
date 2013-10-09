@@ -14,17 +14,18 @@ public class Calibrate extends BehaviorParent {
 	public void action() {
 		super.action();
 
-		calTurn();
+		//calTurn();
 		
-		//calDist();
+		calDist();
 		
 		//calColor();
+		System.exit(0);
 	}
 
 	
 	private void calDist()
 	{
-		pilot.travel(40);
+		pilot.travel(100);
 	}
 	
 	private void calTurn()

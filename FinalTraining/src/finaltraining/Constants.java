@@ -26,15 +26,15 @@ public class Constants {
 	public static NXTRegulatedMotor MOTORMIDDLE=Motor.B;
 	public static NXTRegulatedMotor MOTORRIGHT=Motor.C;
 	
-	public static float WHEELDIAMETEROFFSETLEFT= 0.0f;
-	public static float WHEELDIAMETEROFFSETRIGHT= 0.0f;
-	public static float TRACKWIDTH=10f;
+	public static float WHEELDIAMETEROFFSETLEFT= -0.1f;
+	public static float WHEELDIAMETEROFFSETRIGHT= -0.1f;
+	public static float TRACKWIDTH=12.6f;
 	
 	
 	public static int DEFAULTACCELERATON=40;
 	
 	public static int SPEEDSLOW=5;
-	public static int SPEEDMEDIUM=15;
+	public static int SPEEDMEDIUM=16;
 	public static int SPEEDFAST=25;
 	public static int SPEEDINSANE=40;
 	
@@ -47,10 +47,10 @@ public class Constants {
 			initPilot();
 			initNavi();
 			
-			//initUs();
+			initUs();
 			initLight();
 			
-			//initTouch1();
+			initTouch1();
 			//initTouch2();
 		}
 		
@@ -59,7 +59,7 @@ public class Constants {
 	private static void initPilot()
 	{
 		PILOT =new DifferentialPilot(DifferentialPilot.WHEEL_SIZE_NXT2+WHEELDIAMETEROFFSETLEFT, DifferentialPilot.WHEEL_SIZE_NXT2+WHEELDIAMETEROFFSETRIGHT,
-				TRACKWIDTH, MOTORLEFT, MOTORRIGHT, true);
+				TRACKWIDTH, MOTORLEFT, MOTORRIGHT, false);
 		PILOT.setAcceleration(DEFAULTACCELERATON);
 	}
 	private static void initNavi()

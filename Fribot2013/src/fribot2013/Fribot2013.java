@@ -1,3 +1,4 @@
+package fribot2013;
 
 public class Fribot2013 {
 

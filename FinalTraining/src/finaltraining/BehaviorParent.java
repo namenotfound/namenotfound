@@ -1,5 +1,6 @@
 package finaltraining;
 
+import lejos.nxt.ColorSensor;
 import lejos.nxt.LCD;
 import lejos.nxt.LightSensor;
 import lejos.nxt.Sound;
@@ -17,7 +18,7 @@ public abstract class BehaviorParent implements Behavior{
 	protected Navigator navi = Constants.NAVI;
 	protected DifferentialPilot pilot = Constants.PILOT;
 	protected UltrasonicSensor us = Constants.US;
-	protected LightSensor ls = Constants.LS;
+	protected ColorSensor cs = Constants.LIGHT;
 	protected TouchSensor ts1 = Constants.TS1;
 	protected TouchSensor ts2 = Constants.TS2;
 

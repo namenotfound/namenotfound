@@ -30,6 +30,7 @@ public abstract class BehaviorParent implements Behavior{
 
 	@Override
 	public void action() {
+		LCD.clear(2);
 		LCD.drawString(this.toString(), 0, 2);
 		Sound.playTone(2000, 200);
 		suppressed = false;

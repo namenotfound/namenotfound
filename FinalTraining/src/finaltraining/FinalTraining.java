@@ -17,8 +17,8 @@ public class FinalTraining {
 		Delay.msDelay(1000);
 		Constants.init();
 		Behavior[] b={
-				new Calibrate();
-				new Abort();
+				new Calibrate(),
+				new Abort()
 		};
 		
 		Arbitrator arbi=new Arbitrator(b);

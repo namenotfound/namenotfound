@@ -72,7 +72,7 @@ public class Constants {
 	}
 	private static void initLight()
 	{
-		LIGHT=new LightSensor(SensorPort.S3);
+		LIGHT=new ColorSensor(SensorPort.S3);
 	}
 	private static void initTouch1()
 	{

@@ -63,6 +63,7 @@ public abstract class BehaviorParent implements Behavior{
 				return false;
 			}
 		}
+		return true;
 	}
 	
 	private boolean waitForPilotStop(){

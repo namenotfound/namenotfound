@@ -5,7 +5,7 @@ import lejos.util.Delay;
 
 public class _3PickBall extends BehaviorParent {
 	
-	private int detectedColor;
+	private int detectedColor=0;
 	
 	@Override
 	public String toString() {

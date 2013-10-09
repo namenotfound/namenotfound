@@ -13,15 +13,19 @@ public class _5DriveHome extends BehaviorParent {
 		super.action();
 
 		if (pb1.getDetectedColor() == 0) {
-			navi.goTo(10, 10, 180);
+			navi.goTo(88, 55, 180);
+			if (!waitForStop()) {
+				return;
+			}
+			navi.goTo(20, 20, 180);
 			if (!waitForStop()) {
 				return;
 			}
 		} else if (pb1.getDetectedColor() == 2) {
-			navi.goTo(108, 55, 180);
+			navi.goTo(88, 55, 180);
 			if (!waitForStop()) {
 				return;
-			}
+			}			
 			navi.goTo(20, 55, -90);
 			if (!waitForStop()) {
 				return;

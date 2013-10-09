@@ -16,12 +16,13 @@ public class FinalTraining {
 		Button.waitForAnyPress();
 		Delay.msDelay(1000);
 		Constants.init();
+		_3PickBall pb=new _3PickBall();
 		Behavior[] b={
-				
+				new _5DriveHome(pb),
 				new _4GetBall(),
-			//	new _3PickBall(),
-			//	new _2_Linefollower(),
-				//new _1DriveToLine(),
+				new _3PickBall(),
+				new _2_Linefollower(),
+				new _1DriveToLine(),
 				
 				//new Calibrate(),
 				new Abort()

@@ -10,7 +10,6 @@ public class _4GetBall extends BehaviorParent {
 	public void action() {
 		super.action();
 
-		navi.getPoseProvider().setPose(new Pose(260, 50, 0));
 		pilot.setTravelSpeed(Constants.SPEEDFAST);
 		pilot.travel(-20, true);
 		if (!waitForStop()) {
@@ -22,23 +21,38 @@ public class _4GetBall extends BehaviorParent {
 			return;
 		}
 		us.continuous();
-		int range=51;
-		while(range>50)
-		{
-		range =findObject(range, 1);
-				if(suppressed)
+		int range = 21;
+		int max=21;
+		int count=1;
+		while (range > max-1) {
+			LCD.drawInt(max, 0, 5);
+			count++;
+			range = findObject(range, 1,18);
+			if (suppressed) {
+				return;
+			}
+			if (range > max-1) {
+				//max-=5;
+				range=max;
+				if(count>6)
 				{
-					return;
+					break;
+				}
+				if(max<=1)
+				{
+					break;
 				}
 				pilot.rotate(-45);
 				pilot.travel(10);
 				pilot.rotate(-45);
+			}
 		}
-			range=	adjust(range, 1, false);
+		range = adjust(range, 1, false);
 		pilot.travel(range - 6);
 
 		Constants.MOTORMIDDLE.setAcceleration(900);
 		Constants.MOTORMIDDLE.rotate(160);
+		
 
 		executed = true;
 	}
@@ -48,12 +62,11 @@ public class _4GetBall extends BehaviorParent {
 		return "Get Ball";
 	}
 
-	private int findObject(int range, int dir) {
-		int counter=0;
-		while (!suppressed&&counter<=18) {
+	private int findObject(int range, int dir,int runs) {
+		int counter = 0;
+		while (!suppressed && counter <= runs) {
 			counter++;
 			pilot.rotate(5 * dir);
-			Delay.msDelay(100);
 			int tmprng = (int) us.getRange();
 			LCD.clear(4);
 			LCD.drawInt(tmprng, 0, 4);

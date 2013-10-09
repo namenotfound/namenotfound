@@ -1,3 +1,4 @@
+package finaltraining;
 
 public class FinalTraining {
 

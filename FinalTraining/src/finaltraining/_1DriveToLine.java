@@ -26,7 +26,7 @@ public class _1DriveToLine extends BehaviorParent {
 				return;
 			}
 		}
-		
+		// finde weisse linie
 		pilot.setTravelSpeed(Constants.SPEEDSLOW);
 		while(cs.getColor().getColor() != Color.WHITE){
 			Delay.msDelay(50);

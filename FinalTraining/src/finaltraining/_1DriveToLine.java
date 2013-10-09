@@ -12,7 +12,7 @@ public class _1DriveToLine extends BehaviorParent {
 		pilot.setTravelSpeed(Constants.SPEEDFAST);
 		
 		//
-		navi.goTo(40, 140, 0);
+		navi.goTo(35, 140, 0);
 		if(!waitForStop()){
 			return;
 		}

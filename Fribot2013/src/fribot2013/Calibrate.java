@@ -14,10 +14,10 @@ public class Calibrate extends BehaviorParent {
 
 		 //calOdometry();
 		// calLight();
-		//calLight();
+		calLight();
 		//calcTurn();
 		//calcDist();
-		calcMiddle();
+		//calcMiddle();
 		//nav();
 		executed = true;
 		System.exit(0);
@@ -58,12 +58,12 @@ public class Calibrate extends BehaviorParent {
 	
 	private void calLight() {
 		// RED = 0, BLUE = 2
-		light.setFloodlight(true);
+		lightHor.setFloodlight(false);
 		
 		while (!supressed) {
 			
 		
-			int c1 = light.readNormalizedValue();
+			int c1 = lightHor.readNormalizedValue();
 			LCD.clear(2);
 			LCD.drawInt(c1, 3, 0, 2);
 			Delay.msDelay(100);

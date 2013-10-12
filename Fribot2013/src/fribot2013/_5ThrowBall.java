@@ -17,7 +17,7 @@ public class _5ThrowBall extends BehaviorParent {
 		pilot.rotate(45);
 		pilot.travel(-10);
 		pilot.setTravelSpeed(Constants.SPEEDSLOW);
-		pilot.rotate(-115);
+		pilot.rotate(-118);
 		
 		pilot.setAcceleration(400);
 		pilot.setTravelSpeed(Constants.SPEEDMEDIUM);

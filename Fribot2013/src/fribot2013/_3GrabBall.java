@@ -7,7 +7,7 @@ import lejos.util.Delay;
 public class _3GrabBall extends BehaviorParent {
 
 	private int stopDistance=10;
-	int count=0;
+
 	@Override
 	public void action() {
 		super.action();
@@ -52,9 +52,6 @@ public class _3GrabBall extends BehaviorParent {
 		
 		executed=true;
 		
-		LCD.clear(3);
-		LCD.drawString("Homo "+count, 0, 3);
-		count++;
 	}
 	
 	@Override

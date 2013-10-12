@@ -10,6 +10,7 @@ import lejos.robotics.localization.OdometryPoseProvider;
 import lejos.robotics.navigation.DifferentialPilot;
 import lejos.robotics.navigation.Navigator;
 import lejos.robotics.subsumption.Behavior;
+import lejos.util.Delay;
 import lejos.util.PIDController;
 
 public abstract class BehaviorParent implements Behavior {
@@ -22,52 +23,52 @@ public abstract class BehaviorParent implements Behavior {
 	protected TouchSensor ts2 = Constants.TS2;
 	protected UltrasonicSensor us = Constants.US;
 	protected LightSensor light = Constants.LIGHT;
-	protected LightSensor lightHor=Constants.LIGHTHOR;
+	protected LightSensor lightHor = Constants.LIGHTHOR;
 
 	protected PIDController controller;
-	
-	public BehaviorParent()
-	{
-		
-	controller=new PIDController(550, 1);
-	light.setFloodlight(true);
-	
-	controller.setPIDParam(PIDController.PID_KP, 4);  //5
-	controller.setPIDParam(PIDController.PID_KI, 0f);
-	controller.setPIDParam(PIDController.PID_KD, 0);
-	controller.freezeIntegral(true);
+
+	public BehaviorParent() {
+
+		controller = new PIDController(550, 1);
+		light.setFloodlight(true);
+
+		controller.setPIDParam(PIDController.PID_KP, 4); // 5
+		controller.setPIDParam(PIDController.PID_KI, 0f);
+		controller.setPIDParam(PIDController.PID_KD, 0);
+		controller.freezeIntegral(true);
 	}
-	
+
 	protected boolean isOn() {
 		int offcount = 0;
 		int oncount = 0;
+		lightHor.setFloodlight(false);
 		for (int i = 0; i < 7; i++) {
-			int lightVal = lightHor.getLightValue();
-			if (lightVal > 450) {
+			int lightVal = lightHor.readNormalizedValue();
+			LCD.clear(5);
+			LCD.drawInt(lightVal, 0, 5);
+			if (lightVal > 500) {
 				oncount++;
 			} else {
 				offcount++;
 			}
-
+			Delay.msDelay(100);
 		}
 		return oncount < offcount;
 	}
-	
-	
-	protected void doPID(int dir)
-	{
-		int error=0;
-		int lightVal=light.getNormalizedLightValue();
-		error=controller.doPID(lightVal);
+
+	protected void doPID(int dir) {
+		int error = 0;
+		int lightVal = light.getNormalizedLightValue();
+		error = controller.doPID(lightVal);
 		LCD.clear(5);
 		LCD.drawInt(lightVal, 3, 0, 5);
 		LCD.clear(4);
-		LCD.drawInt(error*dir, 3, 0, 4);
+		LCD.drawInt(error * dir, 3, 0, 4);
 
-		pilot.steer(error*dir/2f);
-		
+		pilot.steer(error * dir / 2f);
+
 	}
-	
+
 	@Override
 	public boolean takeControl() {
 		// TODO Auto-generated method stub
@@ -110,7 +111,7 @@ public abstract class BehaviorParent implements Behavior {
 		return false;
 	}
 
-	//test
+	// test
 	private boolean waitForPilotStop() {
 		while (pilot.isMoving()) {
 			if (supressed) {

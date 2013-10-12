@@ -1,5 +1,7 @@
 package fribot2013;
 
+import lejos.nxt.Button;
+import lejos.nxt.LCD;
 import lejos.robotics.navigation.Pose;
 
 public class _4LightOur extends BehaviorParent {
@@ -34,6 +36,15 @@ public class _4LightOur extends BehaviorParent {
 		pilot.travel(stopDistance -6f);
 		pilot.travel(-(stopDistance-3));
 		
+		boolean lightOn=isOn();
+		LCD.clear(4);
+		LCD.drawString(lightOn?"On":"Off", 0, 4);
+		if(!lightOn)
+		{
+			pilot.travel(-(stopDistance-3));
+			pilot.travel(2*(stopDistance-3));
+			pilot.travel(-(stopDistance-3));
+		}
 		executed = true;
 	}
 

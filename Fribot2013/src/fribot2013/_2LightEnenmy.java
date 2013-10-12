@@ -19,11 +19,11 @@ public class _2LightEnenmy extends BehaviorParent {
 		}
 		
 		pilot.setAcceleration(Constants.ACCELERATION);
-		navi.goTo(178,95,90);
-		if(waitForStop())
-		{	
-			return;
-		}
+		//navi.goTo(178,95,90);
+	//	if(waitForStop())
+		//{	
+			//return;
+		//}
 		
 		pilot.setAcceleration(300);
 		pilot.setTravelSpeed(Constants.SPEEDSLOW);

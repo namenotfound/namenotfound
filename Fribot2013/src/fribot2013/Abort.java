@@ -1,4 +1,4 @@
-package hsluchallange;
+package fribot2013;
 
 
 import lejos.nxt.Button;

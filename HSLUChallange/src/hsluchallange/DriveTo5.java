@@ -1,5 +1,6 @@
 package hsluchallange;
 
+import fribot2013.Constants;
 import lejos.nxt.LCD;
 
 public class DriveTo5 extends DriveToParent {

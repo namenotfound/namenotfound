@@ -1,4 +1,4 @@
-package hsluchallange;
+package fribot2013;
 
 import lejos.nxt.ColorSensor.Color;
 import lejos.nxt.LCD;
@@ -14,7 +14,7 @@ public class Calibrate extends BehaviorParent {
 
 		// calOdometry();
 		// calLight();
-		calColor();
+		calLight();
 		//calcTurn();
 		//calcDist();
 		//calcMiddle();
@@ -42,18 +42,17 @@ public class Calibrate extends BehaviorParent {
 	}
 	
 	
-	private void calColor() {
+	private void calLight() {
 		// RED = 0, BLUE = 2
 		light.setFloodlight(false);
 		
 		while (!supressed) {
 			
 		
-			Color c1 = light.getColor();
+			int c1 = light.getNormalizedLightValue();
 			LCD.clear(2);
-			LCD.drawInt(c1.getBlue(), 3, 0, 2);
-			LCD.drawInt(c1.getRed(), 3, 0, 3);
-			Delay.msDelay(500);
+			LCD.drawInt(c1, 3, 0, 2);
+			Delay.msDelay(100);
 
 		}
 

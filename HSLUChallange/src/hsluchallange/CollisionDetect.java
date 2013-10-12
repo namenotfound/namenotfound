@@ -1,5 +1,7 @@
 package hsluchallange;
 
+import fribot2013.BehaviorParent;
+
 public class CollisionDetect extends BehaviorParent{
 
 	private boolean active=false;

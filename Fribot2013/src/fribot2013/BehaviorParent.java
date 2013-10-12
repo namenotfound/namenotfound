@@ -1,4 +1,4 @@
-package hsluchallange;
+package fribot2013;
 
 import lejos.nxt.ColorSensor;
 import lejos.nxt.LCD;
@@ -20,7 +20,8 @@ public abstract class BehaviorParent implements Behavior {
 	protected TouchSensor ts1 = Constants.TS1;
 	protected TouchSensor ts2 = Constants.TS2;
 	protected UltrasonicSensor us = Constants.US;
-	protected ColorSensor light = Constants.LIGHT;
+	protected LightSensor light = Constants.LIGHT;
+	protected LightSensor lightHor=Constants.LIGHTHOR;
 
 	@Override
 	public boolean takeControl() {

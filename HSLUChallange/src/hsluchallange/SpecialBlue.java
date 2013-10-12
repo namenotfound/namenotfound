@@ -1,5 +1,7 @@
 package hsluchallange;
 
+import fribot2013.Constants;
+
 public class SpecialBlue extends DriveToParent {
 
 	private int executions=0;

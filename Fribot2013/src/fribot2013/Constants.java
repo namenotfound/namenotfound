@@ -1,4 +1,4 @@
-package hsluchallange;
+package fribot2013;
 
 
 import java.awt.Point;
@@ -23,7 +23,8 @@ public class Constants {
 	public static DifferentialPilot PILOT;
 	public static TouchSensor TS1;
 	public static TouchSensor TS2;
-	public static ColorSensor LIGHT;
+	public static LightSensor LIGHT;
+	public static LightSensor LIGHTHOR;
 	public static UltrasonicSensor US;
 	
 	public static float TRACKWIDTH=12f;
@@ -57,9 +58,9 @@ public class Constants {
 		initPilot();
 		initNavigation();
 		
-		initTouch();
+	//	initTouch();
 		initLight();
-		initUS();		
+	//	initUS();		
 		initialised=true;
 	}
 	}
@@ -81,7 +82,8 @@ public class Constants {
 	}
 	private static void initLight()
 	{
-		LIGHT=new ColorSensor(SensorPort.S3);
+		LIGHT=new LightSensor(SensorPort.S3);
+		LIGHTHOR=new LightSensor(SensorPort.S2);
 	}
 	private static void initTouch()
 	{

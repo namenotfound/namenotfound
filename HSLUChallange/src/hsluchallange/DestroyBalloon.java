@@ -2,6 +2,8 @@ package hsluchallange;
 
 import java.util.ArrayList;
 
+import fribot2013.BehaviorParent;
+import fribot2013.Constants;
 import lejos.nxt.ColorSensor;
 import lejos.nxt.LCD;
 import lejos.robotics.Color;

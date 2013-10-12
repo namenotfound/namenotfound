@@ -1,5 +1,7 @@
 package hsluchallange;
 
+import fribot2013.BehaviorParent;
+
 public abstract class DriveToParent extends BehaviorParent {
 	protected DestroyBalloon db;
 	protected CollisionDetect cd;

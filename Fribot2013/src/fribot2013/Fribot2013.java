@@ -16,7 +16,8 @@ public class Fribot2013 {
 		Delay.msDelay(1000);
 		Constants.init();
 		//new Calibrate().action();
-		new _1QualyT1().action();
+	//	new _1QualyT1().action();
+		new _1FinalT1().action();
 		new _2LightEnenmy().action();
 		new _3GrabBall().action();
 		new _4LightOur().action();

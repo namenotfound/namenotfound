@@ -33,7 +33,7 @@ public class _4LightOur extends BehaviorParent {
 		navi.getPoseProvider().setPose(new Pose(180, stopDistance+1, -90));
 		pilot.setAcceleration(Constants.ACCELERATION);
 		
-		pilot.travel(stopDistance -6f);
+		pilot.travel(stopDistance -5f);
 		pilot.travel(-(stopDistance-3));
 		
 		boolean lightOn=isOn();

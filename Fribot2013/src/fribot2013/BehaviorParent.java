@@ -10,6 +10,7 @@ import lejos.robotics.localization.OdometryPoseProvider;
 import lejos.robotics.navigation.DifferentialPilot;
 import lejos.robotics.navigation.Navigator;
 import lejos.robotics.subsumption.Behavior;
+import lejos.util.PIDController;
 
 public abstract class BehaviorParent implements Behavior {
 
@@ -23,6 +24,31 @@ public abstract class BehaviorParent implements Behavior {
 	protected LightSensor light = Constants.LIGHT;
 	protected LightSensor lightHor=Constants.LIGHTHOR;
 
+	protected PIDController controller;
+	
+	public BehaviorParent()
+	{
+		
+	controller=new PIDController(185, 1);
+	
+	controller.setPIDParam(PIDController.PID_KP, 4);  //5
+	controller.setPIDParam(PIDController.PID_KI, 0f);
+	controller.setPIDParam(PIDController.PID_KD, 0);
+	controller.freezeIntegral(true);
+	}
+	
+	
+	protected void doPID()
+	{
+		int error=0;
+		error=controller.doPID(light.getNormalizedLightValue());
+		LCD.clear(4);
+		LCD.drawInt(error, 3, 0, 4);
+
+		pilot.steer(error/10f);
+		
+	}
+	
 	@Override
 	public boolean takeControl() {
 		// TODO Auto-generated method stub

@@ -49,7 +49,7 @@ public class Calibrate extends BehaviorParent {
 		while (!supressed) {
 			
 		
-			int c1 = light.getNormalizedLightValue();
+			int c1 = light.readNormalizedValue();
 			LCD.clear(2);
 			LCD.drawInt(c1, 3, 0, 2);
 			Delay.msDelay(100);

@@ -39,7 +39,7 @@ public class Constants {
 	public static int SPEEDSLOW=8;
 	public static int SPEEDMEDIUM=25;
 	public static int SPEEDFAST=25;
-	public static int SPEEDINSANE=60;
+	public static int SPEEDINSANE=90;
 
 	//X5,X3,X6,X4    X2,X1 End
 	public static Point START =new Point(57,20+(int)(TRACKWIDTH/2));

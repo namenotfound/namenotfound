@@ -29,7 +29,8 @@ public abstract class BehaviorParent implements Behavior {
 	public BehaviorParent()
 	{
 		
-	controller=new PIDController(185, 1);
+	controller=new PIDController(550, 1);
+	light.setFloodlight(true);
 	
 	controller.setPIDParam(PIDController.PID_KP, 4);  //5
 	controller.setPIDParam(PIDController.PID_KI, 0f);
@@ -37,15 +38,33 @@ public abstract class BehaviorParent implements Behavior {
 	controller.freezeIntegral(true);
 	}
 	
+	protected boolean isOn() {
+		int offcount = 0;
+		int oncount = 0;
+		for (int i = 0; i < 7; i++) {
+			int lightVal = lightHor.getLightValue();
+			if (lightVal > 450) {
+				oncount++;
+			} else {
+				offcount++;
+			}
+
+		}
+		return oncount < offcount;
+	}
 	
-	protected void doPID()
+	
+	protected void doPID(int dir)
 	{
 		int error=0;
-		error=controller.doPID(light.getNormalizedLightValue());
+		int lightVal=light.getNormalizedLightValue();
+		error=controller.doPID(lightVal);
+		LCD.clear(5);
+		LCD.drawInt(lightVal, 3, 0, 5);
 		LCD.clear(4);
-		LCD.drawInt(error, 3, 0, 4);
+		LCD.drawInt(error*dir, 3, 0, 4);
 
-		pilot.steer(error/10f);
+		pilot.steer(error*dir/2f);
 		
 	}
 	
@@ -58,7 +77,7 @@ public abstract class BehaviorParent implements Behavior {
 	@Override
 	public void action() {
 		supressed = false;
-		LCD.clear(2);
+		LCD.clear(1);
 		LCD.drawString(this.toString(), 0, 1);
 		Sound.playTone(2500, 500);
 	}

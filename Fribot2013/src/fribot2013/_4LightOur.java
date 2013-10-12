@@ -9,50 +9,38 @@ public class _4LightOur extends BehaviorParent {
 	@Override
 	public void action() {
 		super.action();
-
+		if(executed)
+		{
+			return;
+		}
 		pilot.setAcceleration(Constants.ACCELERATION);
-		navi.goTo(180, 85, -90);
+		navi.goTo(178, 30, -90);
 		if (waitForStop()) {
 			return;
 		}
 
 		pilot.setAcceleration(300);
-		pilot.setTravelSpeed(Constants.SPEEDMEDIUM);
+		pilot.setTravelSpeed(Constants.SPEEDSLOW);
 
 		us.continuous();
 
 		while (!supressed && (us.getRange() > stopDistance)) {
-			doPID();
+			doPID(1);
 		}
 		pilot.stop();
-		navi.getPoseProvider().setPose(new Pose(180, 120 - stopDistance, 0));
+		navi.getPoseProvider().setPose(new Pose(180, stopDistance+1, -90));
 		pilot.setAcceleration(Constants.ACCELERATION);
 		
-		boolean open=false;
-		do{
-			pilot.travel(stopDistance - 2);
-			pilot.travel(-3);
-			open=isOn();
-			pilot.travel(-(stopDistance-5));
-		}while(!open);
-			
-
+		pilot.travel(stopDistance -6f);
+		pilot.travel(-(stopDistance-3));
+		
 		executed = true;
 	}
 
-	private boolean isOn() {
-		int offcount = 0;
-		int oncount = 0;
-		for (int i = 0; i < 7; i++) {
-			int lightVal = lightHor.getLightValue();
-			if (lightVal > 450) {
-				oncount++;
-			} else {
-				offcount++;
-			}
-
-		}
-		return oncount < offcount;
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Light Our";
 	}
 
 }

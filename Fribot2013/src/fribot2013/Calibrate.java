@@ -15,17 +15,26 @@ public class Calibrate extends BehaviorParent {
 		 //calOdometry();
 		// calLight();
 		//calLight();
-		calcTurn();
+		//calcTurn();
 		//calcDist();
-		//calcMiddle();
+		calcMiddle();
+		//nav();
 		executed = true;
 		System.exit(0);
 	}
 
 	
+	private void nav()
+	{
+		navi.goTo(0, 0,-90);
+		waitForStop();
+		navi.goTo(10, 0,-90);
+		waitForStop();
+	}
+	
 	private void calcTurn()
 	{
-		pilot.rotate(90);
+		pilot.rotate(180);
 	}
 	
 	private void calcDist()
@@ -37,14 +46,19 @@ public class Calibrate extends BehaviorParent {
 	private void calcMiddle()
 	{
 		Constants.MOTORMIDDLE.setAcceleration(900);
-		Constants.MOTORMIDDLE.rotate(200);
-		Constants.MOTORMIDDLE.rotate(-200,true);
+		Constants.MOTORMIDDLE.rotate(180);
+		Constants.MOTORMIDDLE.setAcceleration(100);
+		Constants.MOTORMIDDLE.rotate(-60);
+		Constants.MOTORMIDDLE.setAcceleration(3000);
+		Constants.MOTORMIDDLE.setSpeed(1000);
+		Constants.MOTORMIDDLE.rotate(-120);
+	
 	}
 	
 	
 	private void calLight() {
 		// RED = 0, BLUE = 2
-		light.setFloodlight(false);
+		light.setFloodlight(true);
 		
 		while (!supressed) {
 			

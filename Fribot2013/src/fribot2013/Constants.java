@@ -27,7 +27,7 @@ public class Constants {
 	public static LightSensor LIGHTHOR;
 	public static UltrasonicSensor US;
 	
-	public static float TRACKWIDTH=13f;
+	public static float TRACKWIDTH=9.6f;
 	public static float WHEELDIAMETEROFFSET=-0.11f;
 	public static NXTRegulatedMotor MOTORLEFT=Motor.A;
 	public static NXTRegulatedMotor MOTORRIGHT=Motor.C;
@@ -42,14 +42,6 @@ public class Constants {
 	public static int SPEEDINSANE=90;
 
 	//X5,X3,X6,X4    X2,X1 End
-	public static Point START =new Point(57,20+(int)(TRACKWIDTH/2));
-	public static Point X1=new Point(262,48);
-	public static Point X2=new Point(225,120);
-	public static Point X3=new Point(150,120);
-	public static Point X4=new Point(43,156);
-	public static Point X5=new Point(150,84);
-	public static Point X6=new Point(74,84);
-	public static Point END=new Point(300,158);
 	
  	public static void init()
 	{
@@ -60,7 +52,7 @@ public class Constants {
 		
 	//	initTouch();
 		initLight();
-	//	initUS();		
+		initUS();		
 		initialised=true;
 	}
 	}
@@ -74,7 +66,7 @@ public class Constants {
 	private static void initNavigation()
 	{
 		NAVI=new Navigator(PILOT);
-		NAVI.getPoseProvider().setPose(new Pose(54, 27,0));
+		//NAVI.getPoseProvider().setPose(new Pose(54, 27,0));
 	}
 	private static void initUS()
 	{

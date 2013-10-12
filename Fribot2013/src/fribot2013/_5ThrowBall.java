@@ -8,38 +8,30 @@ public class _5ThrowBall extends BehaviorParent {
 	@Override
 	public void action() {
 		super.action();
-		
-		pilot.setAcceleration(Constants.ACCELERATION);
-		navi.goTo(180, 100, 180);
-		if (waitForStop()) {
+		if(executed)
+		{
 			return;
 		}
-		pilot.setAcceleration(390);
-		pilot.setTravelSpeed(Constants.SPEEDINSANE);
-		pilot.forward();
-		while(true&&!supressed)
-		{
-			int lightVal=light.getNormalizedLightValue();
-			if(lightVal<185)
-			{
-				break;
-			}
-			Delay.msDelay(10);
-		}
-		if(supressed)
-		{
-			return;			
-		}
 		
-		Constants.MOTORMIDDLE.setAcceleration(400);
-		Constants.MOTORMIDDLE.setSpeed(100);
-		Constants.MOTORMIDDLE.rotate(90,true);
+		pilot.setAcceleration(Constants.ACCELERATION);
+		pilot.rotate(45);
+		pilot.travel(-10);
+		pilot.setTravelSpeed(Constants.SPEEDSLOW);
+		pilot.rotate(-115);
 		
-		Delay.msDelay(100);
+		pilot.setAcceleration(400);
+		pilot.setTravelSpeed(Constants.SPEEDMEDIUM);
+		pilot.travel(32);
+		
+		Constants.MOTORMIDDLE.setAcceleration(3000);
+		Constants.MOTORMIDDLE.setSpeed(1000);
+		Constants.MOTORMIDDLE.rotate(-120);
+		
+
 		
 		pilot.stop();
 		
-		
+		executed=true;
 		
 	}
 	@Override

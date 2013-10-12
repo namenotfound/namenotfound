@@ -15,16 +15,30 @@ public class Fribot2013 {
 		Button.waitForAnyPress();
 		Delay.msDelay(1000);
 		Constants.init();
-		Behavior[] behavior={
-				
-				new Calibrate(),
+		//new Calibrate().action();
+		new _1QualyT1().action();
+		new _2LightEnenmy().action();
+		new _3GrabBall().action();
+		new _4LightOur().action();
+		new _5ThrowBall().action();
+	
+	
+		
+	
+	/*	Behavior[] behavior={
+				new _5ThrowBall(),
+				new _4LightOur(),
+				new _3GrabBall(),
+				new _2LightEnenmy(),
+				new _1QualyT1(),
+				//new Calibrate(),
 				new Abort()
-		};
+		};*/
 		
 		
-		Arbitrator arbi=new Arbitrator(behavior);
+		//Arbitrator arbi=new Arbitrator(behavior);
 		
-		arbi.start();
+	//	arbi.start();
 		
 	}
 	

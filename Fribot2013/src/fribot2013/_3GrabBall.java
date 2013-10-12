@@ -32,10 +32,11 @@ public class _3GrabBall extends BehaviorParent {
 		pilot.stop();
 		navi.getPoseProvider().setPose(new Pose(200-(6+stopDistance),60,0));
 		pilot.setAcceleration(Constants.ACCELERATION);
+		pilot.rotate(180);
 		Constants.MOTORMIDDLE.setAcceleration(100);
 		Constants.MOTORMIDDLE.setSpeed(40);
 		Constants.MOTORMIDDLE.rotate(120,true);
-		pilot.travel(stopDistance-3);
+		pilot.travel(-(stopDistance-3));
 		
 		Constants.MOTORMIDDLE.setAcceleration(100);
 		Constants.MOTORMIDDLE.setSpeed(40);
@@ -44,7 +45,7 @@ public class _3GrabBall extends BehaviorParent {
 		
 		
 		
-		pilot.travel(-(stopDistance-3));	
+		pilot.travel((stopDistance-3));	
 		
 		executed=true;
 		

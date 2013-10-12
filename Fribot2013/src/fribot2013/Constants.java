@@ -27,7 +27,7 @@ public class Constants {
 	public static LightSensor LIGHTHOR;
 	public static UltrasonicSensor US;
 	
-	public static float TRACKWIDTH=12f;
+	public static float TRACKWIDTH=13f;
 	public static float WHEELDIAMETEROFFSET=-0.11f;
 	public static NXTRegulatedMotor MOTORLEFT=Motor.A;
 	public static NXTRegulatedMotor MOTORRIGHT=Motor.C;
@@ -67,7 +67,7 @@ public class Constants {
 	
 	private static void initPilot()
 	{
-		PILOT=new DifferentialPilot(DifferentialPilot.WHEEL_SIZE_NXT2+WHEELDIAMETEROFFSET, TRACKWIDTH, MOTORLEFT, MOTORRIGHT);
+		PILOT=new DifferentialPilot(DifferentialPilot.WHEEL_SIZE_NXT1+WHEELDIAMETEROFFSET, TRACKWIDTH, MOTORLEFT, MOTORRIGHT);
 		PILOT.setAcceleration(ACCELERATION);
 	}
 	

@@ -52,7 +52,7 @@ public class _4LightOur extends BehaviorParent {
 			}
 
 		}
-		return oncount > offcount;
+		return oncount < offcount;
 	}
 
 }

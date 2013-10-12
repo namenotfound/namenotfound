@@ -12,14 +12,14 @@ public class Calibrate extends BehaviorParent {
 		// TODO Auto-generated method stub
 		super.action();
 
-		// calOdometry();
+		 //calOdometry();
 		// calLight();
-		calLight();
-		//calcTurn();
+		//calLight();
+		calcTurn();
 		//calcDist();
 		//calcMiddle();
 		executed = true;
-
+		System.exit(0);
 	}
 
 	
